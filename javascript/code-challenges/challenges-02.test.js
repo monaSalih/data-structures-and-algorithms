@@ -82,7 +82,7 @@ Write a function named forEachTwoToThe that produces the same output as your for
 const forEachTwoToThe = (arr) => {
   // Solution code here...
   let arryDecl5=[];
-  arr.map(index=>{
+  arr.forEach(index=>{
 
     arryDecl5.push(Math.pow(2,index));
 
