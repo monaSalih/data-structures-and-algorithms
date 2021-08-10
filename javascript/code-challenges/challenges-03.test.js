@@ -64,7 +64,7 @@ const oddValues = (arr) => {
   // Solution code here...
   //new test
   //new attempt
-  
+
   let filtArr4=[];
   arr.filter(index=>
   {
@@ -86,6 +86,16 @@ For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 
 const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
+  let filtArr5= arr.filter(index=>{
+
+    if(!forbiddenValues.include(index)){
+      return index;
+    }
+
+  }
+
+  );
+  filtArr5;
 };
 
 /* ------------------------------------------------------------------------------------------------
