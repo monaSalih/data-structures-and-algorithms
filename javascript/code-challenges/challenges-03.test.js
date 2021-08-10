@@ -44,12 +44,12 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let filtArr3=arr.filter(index =>
-  {
-    return index.include('and');
-  }
-  );
-  return filtArr3;
+  let newArry = arr.filter((item) => {
+    if (item.includes('and')) {
+      return true;
+    }
+  });
+  return newArry;
 };
 
 /* ------------------------------------------------------------------------------------------------
