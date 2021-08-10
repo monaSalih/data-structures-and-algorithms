@@ -46,7 +46,7 @@ const containsAnd = (arr) => {
   // Solution code here...
   let filtArr3=arr.filter(index =>
   {
-    return (index.include('and'));
+    return index.include('and');
   }
   );
   return filtArr3;
@@ -88,9 +88,9 @@ const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
   let filtArr5= arr.filter(index=>{
 
-    if(!forbiddenValues.include(index)){
-      return index;
-    }
+    return !forbiddenValues.include(index);
+
+
 
   }
 
