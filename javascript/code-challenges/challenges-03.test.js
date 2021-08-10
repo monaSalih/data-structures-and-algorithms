@@ -44,12 +44,14 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let newArry = arr.filter((item) => {
-    if (item.includes('and')) {
+  let filtArr3=arr.filter(index =>
+  {
+    if (index.includes('and')){
       return true;
     }
-  });
-  return newArry;
+  }
+  );
+  return filtArr3;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,14 +90,15 @@ const notInFirstArray = (forbiddenValues, arr) => {
   // Solution code here...
   let filtArr5= arr.filter(index=>{
 
-    return !forbiddenValues.include(index);
-
+    if(!forbiddenValues.includes(index)){
+      return index;
+    }
 
 
   }
 
   );
-  filtArr5;
+  return filtArr5;
 };
 
 /* ------------------------------------------------------------------------------------------------
