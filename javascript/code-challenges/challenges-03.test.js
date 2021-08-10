@@ -25,10 +25,9 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 
 const typeNum = (arr) => {
   // Solution code here...
-  let filtArr2=[];
-  arr.filter(index=>
-  { if(typeof(index)===Number){
-    filtArr2.push(index);
+  let filtArr2=arr.filter(index=>
+  { if(typeof index==='number'){
+    return index;
   }
   }
   );
@@ -45,11 +44,10 @@ For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 
 const containsAnd = (arr) => {
   // Solution code here...
-  let filtArr3=[];
-  arr.filter(index=>
+  let filtArr3=arr.filter(index=>
   {
     if (index.include('and')){
-      filtArr3.push(index);
+      return index;
     }
   }
   );
