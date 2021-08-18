@@ -55,18 +55,32 @@ let characters = [
 ];
 
 const sortByChildren = (charArray) => {
-  // Solution code here...
+
+  let newArray = charArray.sort((a, b) => {
+    if (a.children.length === b.children.length) {
+      if (a.name < b.name) {
+        return -1;
+      }
+    } else {
+      if (a.children.length < b.children.length) {
+        return -1;
+      }
+    }
+  });
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
-Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not. 
+Write a function named containsW that takes in a string. This function should use a regular expression pattern to return true if the string contains the letter 'w' in lower case or false if it does not.
 
 ------------------------------------------------------------------------------------------------ */
 
 const containsW = (str) => {
-  // Solution code here...
+
+  let strReg = /w/g;
+  return strReg.test(str);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -82,7 +96,8 @@ For example:
 ------------------------------------------------------------------------------------------------ */
 
 const isNum = (input) => {
-  // Solution code here...
+  let strReg=/[0-9]/g;
+  return strReg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -94,6 +109,8 @@ Write a function named containsWorld that takes in a string or number of any len
 
 const containsWorld = (input) => {
   // Solution code here...
+  let strReg=/world/g;
+  return strReg.test(input);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -106,16 +123,27 @@ Return an array containing all the matches.
 
 const isCapitalized = (str) => {
   // Solution code here...
+
+  let serCap = /[A-Z]\w+/g;
+  let capMatch = str.match(serCap);
+  if(capMatch){
+    return capMatch;
+  }else
+    return [];
+////////////////////////////work
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
 Write a function named citiesAtoJ that takes in an array of city names and uses a regular expression pattern to return a new array containing any cities that begin with the letters A through J, inclusive.
+/////////////////////////joijyi
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  let regArr=arr.filter(index=>index[0].match(/[A-J]/));
+  return regArr;
+  ////////////////////////test work
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -207,8 +235,8 @@ describe('Testing challenge 2', () => {
   });
   test('It should return false if the input does not contain a w', () => {
     expect(containsW('hello everyone')).toBe(false);
-  })
-})
+  });
+});
 
 describe('Testing challenge 3', () => {
   test('It should return true if the input is a number', () => {
@@ -234,7 +262,7 @@ describe('Testing challenge 4', () => {
   test('It should return false if the input does not contain the word school', () => {
     expect(containsWorld('hello everyone')).toBe(false);
   });
-})
+});
 
 describe('Testing challenge 5', () => {
   test('It should only return words that begin with a capital letter', () => {
