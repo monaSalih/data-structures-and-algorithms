@@ -46,7 +46,9 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
-  return Object.values(obj).include(value);
+  let value1 = Object.values(obj);
+  let value2=value1.includes(value)?true:false;
+  return value2;
 
 };
 
@@ -71,6 +73,10 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
+  let objNname=Object.keys(obj);
+  let phone= Object.values(obj);
+  let updatedArray= objNname.map((value,i) => `${value}: ${phone[i]}`);
+  return updatedArray;
 };
 
 
@@ -127,9 +133,7 @@ const characters = [
 const getHouses = (arr) => {
   let houses = [];
   // Solution code here...
-  arr.forEach((index)=>{
-    houses.push(index.houses);
-  });
+  houses=arr.map(item=>item.house);
   return houses;
 };
 
@@ -147,7 +151,18 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+  let string;
+  arr.map(item=>{
+    if (character===item.name){
+      if(item.children){
+        string=true;
+      }else{
+        string=false;
+      }
+    }
+  }
 
+  );
 };
 
 /* ------------------------------------------------------------------------------------------------
