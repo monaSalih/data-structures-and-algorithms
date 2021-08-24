@@ -3,13 +3,29 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
 // Solution code here...
+   let strLen = 0;
+  let long;
+
+  if (arr.length > 0) {
+    arr.map((item,index) => {
+      if ( item.length > strLen) {
+        strLen = item.length;
+        long = index;
+
+      }
+    });
+  }else{
+    long = -1;
+  }
+  return long;
+
 };
-  
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -20,13 +36,13 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 
 const firstLetters = (arr) => {
   // Solution code here...
-  let newArr=[]
+  let newArr=[];
   arr.map(item=>{
     newArr.push(item.charAt(0));
-  })
+  });
   return newArr;
 
-  
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,11 +56,11 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 const findHappiness = (arr) => {
   // Solution code here...
   let newArr= arr.filter(item =>{
-    if  (item.includes(":)")){return item}
-  })
+    if (item.includes(':)')){return item;}
+  });
 
   return newArr;
- 
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -60,7 +76,7 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -69,12 +85,17 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
-// let newArr=str.
+ let newArr=str.split('').filter((num,index)=>{
+   if(index%2!==0){
+     return num;
+   }
+ })
+ return newArr.join('');
 
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
@@ -177,9 +198,9 @@ Run your tests from the console: jest challenges-13.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
-    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
+    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki'];
     const strArray2 = [];
-    const strArray3= ['Ginger']
+    const strArray3= ['Ginger'];
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
