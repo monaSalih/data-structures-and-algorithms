@@ -12,7 +12,15 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
-}
+  let newArr=arr.filter(item=>{
+    let stringStar=/^((Mr||Mrs||Dr||Ms).\s)[A-Z]/;
+    if(stringStar.test(item)){
+      return item;
+    }
+  });
+  return newArr;
+
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,6 +32,10 @@ For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyv
 
 const toTitleCase = (arr) => {
   // Solution code here...
+  let newArr=arr.map(index=>{
+    return(index.charAt(0).toUpperCase()+index.slice(1));
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -99,6 +111,15 @@ let starWarsData = [{
 
 let biggerThanLuke = (arr) => {
   // Solution code here...
+  let newArr=[];
+  arr.filter(item=>{
+    if(item.mass>77){
+      newArr.push(item.name);
+    }
+  });
+  return newArr.join(' - ');
+
+  // 
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -117,10 +138,22 @@ This data could be sorted by name or price.
 
 const sortBy = (property, arr) => {
   // Solution code here...
+  if(property === 'name') {
+    return(arr.sort((a,b) => {
+      if (a.name < b.name) {
+        return -1;
+      } if (a.name > b.name) {
+        return 1;
+      }
+      return 0;
+    }));
+  } else if(property === 'price') {
+    return(arr.sort((a,b) => a.price - b.price));
+  }
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function that determines if a given URL is secure, beginning with https://
 
@@ -133,10 +166,18 @@ https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
 const isSecure = (url) => {
   // Solution code here...
+  if (/^https:\/\//g.test(url)) {
+    return true;
+  }
+  else {
+    return false;
+  }
+  // let regx=/^(http:\/\/)/;
+  // return regx
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named detectTicTacToeWin that accepts a two-dimensional array of strings. Each string is guaranteed to be either "X", "O" or an empty string. Your function should check to see if any row, column, or either diagonal direction has three matching "X" or "O" symbols (non-empty strings), three-in-a-line.
 
