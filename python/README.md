@@ -74,3 +74,14 @@ From the root of the `data-structures-and-algorithms/python` folder, execute the
 - **Run every possible test** - `pytest`
 - **Run filtered tests** - `pytest -k some_filter_text`
 - **Run in watch mode** - `ptw` or `pytest-watch`
+
+
+Python table challenge
+File name | Link Page
+------------ | -------------
+Reverses | [Reverses code challange](code_challenges/README.md)
+<!-- Read01 | [Class02](level401/Class02.md)
+read03 | [Class03](level401/Class03.md)
+read04 | [Class04](level401/Class04.md)
+read05 | [Class05](level401/Class05.md)
+read06 | [Class06](level401/Class06.md) -->
