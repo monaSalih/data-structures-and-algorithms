@@ -3,7 +3,6 @@ import math
 #[2,4,5,6,-6]
 def insertShiftArray(arr,x):
     z=0
-    #####################################################33
     for i in arr:
             z+=1    #10
     y=math.ceil(z/2)
@@ -23,4 +22,4 @@ def insertShiftArray(arr,x):
     newShiftArray+=[l]
 
     return newShiftArray
-# insertShiftArray(6,[2,3,4,5])
+
