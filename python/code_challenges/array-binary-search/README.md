@@ -16,5 +16,5 @@ input=>[4,8,15,16,23, 42], 15	output=>2
 time=>O(n)
 where i use one loop
 
-[Here](https://github.com/monaSalih/data-structures-and-algorithms/pull/19) you can found alink for pull request for this code chalinge
+[Here](https://github.com/monaSalih/data-structures-and-algorithms/tree/array-binary-search) you can found alink for pull request for this code chalinge
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
