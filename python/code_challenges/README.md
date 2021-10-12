@@ -13,3 +13,5 @@ the output of the array it should be the reserve of input array for example:
 ## Approach & Efficiency
 time=>O(n^2)
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+
+it take me 4 hour to complet the work
