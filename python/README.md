@@ -80,7 +80,7 @@ Python table challenge
 File name | Link Page
 ------------ | -------------
 Reverses | [Reverses code challange](code_challenges/README.md)
- array-insert-shift | [array insert shift](code_challenges/array-insert-shift/README.md)
+ array-insert-shift | [array insert shift](code_challenges/array-insert-shift1/README.md)
 <!--read03 | [Class03](level401/Class03.md)
 read04 | [Class04](level401/Class04.md)
 read05 | [Class05](level401/Class05.md)
