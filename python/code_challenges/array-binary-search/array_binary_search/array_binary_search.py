@@ -4,7 +4,7 @@ def BinarySearch(arr,x):
     """
     algoriyhme to insert list,x and search using Binary Search and retrive the index value for were we found x inside the array
     input=>[10,20,30,40,50], 20)
-
+    2
 
     """
     firstElement=0
