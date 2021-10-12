@@ -15,3 +15,6 @@ time=>O(n^2)
 <!-- #################################### -->
 [Here](https://github.com/monaSalih/data-structures-and-algorithms/tree/array-insert-shift) you can found alink for pull request for this code chalinge
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+
+# time to complet solve 
+it take 4 hour
