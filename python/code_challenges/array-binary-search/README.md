@@ -18,3 +18,6 @@ where i use one loop
 
 [Here](https://github.com/monaSalih/data-structures-and-algorithms/tree/array-binary-search) you can found alink for pull request for this code chalinge
 <!-- What approach did you take? Discuss Why. What is the Big O space/time for this approach? -->
+
+# Time to complete solve 
+it take more than 4 hour
