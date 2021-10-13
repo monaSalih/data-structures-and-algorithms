@@ -81,7 +81,8 @@ File name | Link Page
 ------------ | -------------
 Reverses | [Reverses code challange](code_challenges/README.md)
  array-insert-shift | [array insert shift](code_challenges/array-insert-shift/README.md)
-<!--read03 | [Class03](level401/Class03.md)
-read04 | [Class04](level401/Class04.md)
+array-binary-search | [array-binary-search](code_challenges/array-binary-search/README.md)
+array-binary-search | [matrixlist](challange04/README.md)
+<!--read04 | [Class04](level401/Class04.md)
 read05 | [Class05](level401/Class05.md)
 read06 | [Class06](level401/Class06.md) -->
