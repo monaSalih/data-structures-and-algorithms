@@ -23,7 +23,37 @@ creat method name it toString take "none" and return formated list like foolowin
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+in my case it will take o(n)
 
 
 ## API
 <!-- Description of each method publicly available to your Linked List -->
+Methods
+
+* insert
+```
+input=>Arguments: value
+output=>Returns: nothing
+Description=>Adds a new node with that value to the head of the list with an O(1) Time performance.
+```
+* includes
+```
+input=>Arguments: value
+output=>Returns: Boolean
+Description=>Indicates whether that value exists as a Node’s value somewhere within the list.
+```
+* to string
+```
+input=>Arguments: none
+
+output=>Returns: a string representing all the values in the Linked List, formatted as:
+
+"{ a } -> { b } -> { c } -> NULL"
+```
+
+
+[click_here](https://github.com/monaSalih/data-structures-and-algorithms/tree/linked-list)to go to the linked list
+
+
+
+
