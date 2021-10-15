@@ -1,15 +1,7 @@
 class Node:
   """
-  A class representing a Node
-
-  Attributes
-  ----------
-
-
-  Methods
-  -------
-  __init__(data, next_):
-      the constructor method for the class, it takes two parameters, the data parameter is the a reference to the data the node will hold, and the next_
+ node class to store value
+ pointer to the next value
 
   """
 
@@ -19,16 +11,10 @@ class Node:
 
 class LinkedList:
   """
-  A class for creating instances of a Linked List.
-
-  Data and other attributes defined here:
-
-  head: Node | None
-
-  Methods defined here
-
-  insert(value: any)
-  contains(value: any) -> bool
+  linked list class
+  need to include head value
+  should create empty linked list
+  this class should containe 3 method(insert,includes,toString)
   """
 
   def __init__(self):
@@ -36,40 +22,44 @@ class LinkedList:
 
   def insert(self, value):
     """"
-    Insert creates a Node with the value that was passed and adds
-    it to the head of the linked list shifting all other values down
-
-    arguments:
-    value : any
-
-    returns: None
+    input: 1 value
+    output:❌
+    action:insert new value to the head of the list
     """
-    # create new node
     self.head = Node(value, self.head)
 
-  def include(self,value ):
-        current=self.head
-        # bool_result=False
-        while current is False:
-            if current.value==value:
-                return True
-            else:
-                current=current.next
-        return False
+  def includes(self,value ):
+      current=self.head
+      while current != None:
+          if current.data==value:
+              return True
+          else:
+              current=current.next
+      return False
+
+    #    """"
+    #    input: 1 value
+    #    output:true
+    #    action:to check if the value exist in the
+    #    """
+  
 
   def toString(self):
-        input_none = ""
-        current = self.head
-        while current:
-            value = current.value
-            if current.next is None:
-                input_none  +=f"( {value} ) -> NULL"
-                break
-            input_none  += f"( {value} ) -> "
-            current = current.next
-            return input_none
-
-
-
+      input_none = ""
+      current = self.head
+      while current:
+          data = current.data
+          if current.next is None:
+              input_none  +="{"+f'{data}'+"}->Null"
+              break
+          else:
+              input_none  +="{"+f' {data}'+"}-> "
+              data = current.next
+      return input_none
+    #   """
+    #   input:none
+    #   output:{ a } -> { b } -> { c } -> NULL
+    #   action:return formated string represent list value
+    #   """
 
 
