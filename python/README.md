@@ -85,4 +85,5 @@ Reverses | [Reverses code challange](code_challenges/README.md)
 <!--read03 | [Class03](level401/Class03.md)
 read04 | [Class04](level401/Class04.md)
 read05 | [Class05](level401/Class05.md)
-read06 | [Class06](level401/Class06.md) -->
+read06 | [Class06](level401/Class06.md)
+prlfrkrokveodkdskvldfkgdlfklfdk-->
