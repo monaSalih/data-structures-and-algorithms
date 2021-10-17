@@ -81,7 +81,8 @@ File name | Link Page
 ------------ | -------------
 Reverses | [Reverses code challange](code_challenges/README.md)
  array-insert-shift | [array insert shift](code_challenges/array-insert-shift/README.md)
- Linked-List | [linked List](/home/monacode/data/data-structures-and-algorithms/python/code_challenges/linked_list/linked_List.md)
+ Linked-List1 | [linked List](/home/monacode/data/data-structures-and-algorithms/python/code_challenges/linked_list/linked_List.md)
+ Linked-List2 | [linked List](/home/monacode/data/data-structures-and-algorithms/python/code_challenges/linked_list/README.md)
 <!--read03 | [Class03](level401/Class03.md)
 read04 | [Class04](level401/Class04.md)
 read05 | [Class05](level401/Class05.md)

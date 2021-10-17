@@ -28,6 +28,7 @@ class LinkedList:
     """
     self.head = Node(value, self.head)
 
+
   def includes(self, value):
     """
     input: 1 value
@@ -63,43 +64,48 @@ class LinkedList:
    return string
 
 
-  def append(self, data):
+  def append(self, value):
      current = self.head
-     if self.head==None:
-          self.head=Node(data)
-          return self.head.data
-     else:
-         while current.next:
-              current=current.next
-              current.next=Node(data)
-         return current.next
+     node=Node(value)
+     if current==None:
+       self.head = Node(value, self.head)
+
+     while current:
+      if current.next==None:
+          current.next=node
+          node.next=None
+          break
+      else:
+          current=current.next
 
 
-  def insert_before (self,data,new_data):
+  def insert_before (self,value,new_data):
       current=self.head
       if self.head==None:
           self.insert(new_data)
       else:
           while current:
-              if current.next.data==data:
-                  dataafter=current.next
+              if self.head.next.data==value:
+                  data_after=current.next
                   current.next=Node(new_data)
-                  current.next.next=dataafter
+                  current.next.next=data_after
                   break
               current=current.next
 
-  def insert_after (self,data,new_data):
+
+  def insert_after (self,value,new_data):
       current=self.head
       while current:
-          if current.next.data==data:
+          if current.data==value:
                   next_data=current.next
                   current.next=Node(new_data)
-                  current.next.next=next_data
+                  Node(new_data).next=next_data
                   break
           current=current.next
 
 
-
-
+# if __name__=="__main__":
+#     test=LinkedList()
+#     test.insert_after()
 
 
