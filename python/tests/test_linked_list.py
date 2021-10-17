@@ -105,7 +105,7 @@ def test_toString():
 
 def test_append():
     ll=LinkedList()
-    ll.insert(3)
+    ll.append(3)
     ll.append(4)
 
      #output
@@ -131,6 +131,6 @@ def test_insert_after():
   num2= ll.insert(4)
   #output
   expected= "{ 3 } -> { 4 } -> NULL"
-  actull=ll.insert_before(num1,num2)
+  actull=ll.insert_after(num1,num2)
   assert expected==actull
 

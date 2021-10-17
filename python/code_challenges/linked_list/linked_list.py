@@ -1,6 +1,6 @@
 class Node:
   """
- node class to store value
+ node class to store data
  pointer to the next value
   """
 
@@ -43,55 +43,64 @@ class LinkedList:
     return False
 
   def toString(self):
-     """
-     input:none
-     output:{ a } -> { b } -> { c } -> NULL
-     action:return formated string represent list value
-     """
-     input_none = ""
-     current = self.head
-     while current:
-       data = current.data
+   '''
+  to string
+Arguments: none
+Returns: a string representing all the values in the Linked List,
+ formatted as:
+"{ a } -> { b } -> { c } -> NULL"
+
+  '''
+   string = ""
+   current=self.head
+  # WHILE Current is not NULL
+   while current != None:
+  #   IF Current.Value is equal to value
+       value = current.data
        if current.next is None:
-         input_none += "{"+f'{data}'+"}->Null"
-         break
+          string +="{"+f' {value} '+"}" + " -> NULL"
+          break
+
        else:
-         input_none  +="{"+f' {data}'+"}-> "
-         data = current.next
-     return input_none
+          string +="{"+f' {value} '+"} -> "
+          current = current.next
+    #   Current <-- Current.Next
+  #     return TRUE
+   return string
 
 
-  def append(self, value):
+  def append(self, data):
      current = self.head
      if self.head==None:
-          self.head=Node(value)
-          return self.head.value
+          self.head=Node(data)
+          return self.head.data
      else:
          while current.next:
               current=current.next
-              current.next=Node(value)
+              current.next=Node(data)
          return current.next
 
-  def insert_before (self,value,new_value):
+
+  def insert_before (self,data,new_data):
       current=self.head
       if self.head==None:
-          self.insert(new_value)
+          self.insert(new_data)
       else:
           while current:
-              if current.next.value==value:
-                  valueafter=current.next
-                  current.next=Node(new_value)
-                  current.next.next=valueafter
+              if current.next.data==data:
+                  dataafter=current.next
+                  current.next=Node(new_data)
+                  current.next.next=dataafter
                   break
               current=current.next
 
-  def insert_after (self,value,new_value):
+  def insert_after (self,data,new_data):
       current=self.head
       while current:
-          if current.next.value==value:
-                  next_value=current.next
-                  current.next=Node(new_value)
-                  current.next.next=next_value
+          if current.next.data==data:
+                  next_data=current.next
+                  current.next=Node(new_data)
+                  current.next.next=next_data
                   break
           current=current.next
 
