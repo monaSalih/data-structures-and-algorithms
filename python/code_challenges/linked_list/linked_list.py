@@ -2,7 +2,6 @@ class Node:
   """
  node class to store value
  pointer to the next value
-
   """
 
   def __init__(self, data, next_=None):
@@ -43,7 +42,7 @@ class LinkedList:
         current = current.next
     return False
 
-  def toString(self):
+  def __str__(self):
      """
      input:none
      output:{ a } -> { b } -> { c } -> NULL
@@ -51,15 +50,7 @@ class LinkedList:
      """
      input_none = ""
      current = self.head
-     while current:
-       data = current.data
-       if current.next is None:
-         input_none += "{"+f'{data}'+"}->Null"
-         break
-       else:
-         input_none  +="{"+f' {data}'+"}-> "
-         data = current.next
-     return input_none
-
-
-
+     while current is not None:
+       input_none  +="{"+f' {current.data}'+"}-> "
+       current = current.next
+     return "{"+f'{current.data}'+"}->Null"

@@ -59,17 +59,15 @@ def include (self,value ):
             current=current.next
         return False
 
-def toString(self):
-    input_none = ""
-    current = self.head
-    while current:
-      value = current.value
-      if current.next is None:
-        input_none  +=f"( {value} ) -> NULL"
-        break
-      input_none  += f"( {value} ) -> "
-      current = current.next
-      return input_none
+# def __str__(self):
+#     input_none = ""
+#     current = self.head
+#     while current.next is None:
+#       value = current.value
+#       input_none  += f"( {value} ) -> "
+#       current = current.next
+#     return input_none  =f"( {value} ) -> NULL"
+
 
 
 

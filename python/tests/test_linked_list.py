@@ -98,7 +98,7 @@ def test_toString():
 
      #output
     expected= "{ 0 } -> { 1 } -> NULL"
-    actul= ll.toString()
+    actul=__str__(ll)
 
     assert expected==actul
 
