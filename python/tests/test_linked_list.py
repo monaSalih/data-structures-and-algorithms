@@ -105,11 +105,32 @@ def test_toString():
 
 def test_append():
     ll=LinkedList()
-    ll.append(1)
-    ll.append(0)
+    ll.insert(3)
+    ll.append(4)
 
      #output
-    expected= "{ 0 } -> { 1 } -> NULL"
-    actul=ll.toString()
+    expected= "{ 3 } -> { 4 } -> NULL"
+    actull=ll.toString()
 
-    assert expected==actul
+    assert expected==actull
+
+
+def test_insert_before():
+
+  ll=LinkedList()
+  num1= ll.insert(3)
+  num2= ll.insert(4)
+  #output
+  expected= "{ 3 } -> { 4 } -> NULL"
+  actull=ll.insert_before(num1,num2)
+  assert expected==actull
+
+def test_insert_after():
+  ll=LinkedList()
+  num1= ll.insert(3)
+  num2= ll.insert(4)
+  #output
+  expected= "{ 3 } -> { 4 } -> NULL"
+  actull=ll.insert_before(num1,num2)
+  assert expected==actull
+

@@ -85,6 +85,18 @@ class LinkedList:
                   break
               current=current.next
 
+  def insert_after (self,value,new_value):
+      current=self.head
+      while current:
+          if current.next.value==value:
+                  next_value=current.next
+                  current.next=Node(new_value)
+                  current.next.next=next_value
+                  break
+          current=current.next
+
+
+
 
 
 
