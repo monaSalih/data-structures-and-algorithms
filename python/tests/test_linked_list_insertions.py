@@ -98,18 +98,17 @@ def test_toString():
 
      #output
     expected= "{ 0 } -> { 1 } -> NULL"
-    actul=ll.toString()
+    actul= ll.toString()
 
     assert expected==actul
 
+# def test_append():
+#     ll=LinkedList()
+#     ll.append(1)
+#     ll.append(0)
 
-def test_append():
-    ll=LinkedList()
-    ll.append(1)
-    ll.append(0)
+#      #output
+#     expected= "{ 0 } -> { 1 } -> NULL"
+#     actul= ll.toString()
 
-     #output
-    expected= "{ 0 } -> { 1 } -> NULL"
-    actul=ll.toString()
-
-    assert expected==actul
+#     assert expected==actul

@@ -60,31 +60,22 @@ class LinkedList:
          data = current.next
      return input_none
 
+#   def append(self, value):
+#         """
+#         input: 1 value
+#         output:❌
+#         action:append new value to the end of the list
+#         """
+#         current = self.head
+#         if self.head==None:
+#             self.head=Node(value)
+#             return self.head.value
+#         else:
+#             while current.next:
+#                 current=current.next
+#             current.next=Node(value)
+#             return current.next
 
-  def append(self, value):
-     current = self.head
-     if self.head==None:
-          self.head=Node(value)
-          return self.head.value
-     else:
-         while current.next:
-              current=current.next
-              current.next=Node(value)
-         return current.next
-
-  def insert_before (self,value,new_value):
-      current=self.head
-      if self.head==None:
-          self.insert(new_value)
-      else:
-          while current:
-              if current.next.value==value:
-                  valueafter=current.next
-                  current.next=Node(new_value)
-                  current.next.next=valueafter
-                  break
-              current=current.next
-
-
+# def insert_before
 
 
