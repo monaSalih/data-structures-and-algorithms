@@ -107,16 +107,13 @@ def test_append():
     ll=LinkedList()
     ll.append(3)
     ll.append(4)
-
-     #output
+    #output
     expected= "{ 3 } -> { 4 } -> NULL"
     actull=ll.toString()
-
     assert expected==actull
 
 
 def test_insert_before():
-
   ll=LinkedList()
   num1= ll.insert(3)
   num2= ll.insert(4)
