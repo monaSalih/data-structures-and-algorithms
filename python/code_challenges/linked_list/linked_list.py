@@ -44,18 +44,14 @@ class LinkedList:
 
   def toString(self):
    '''
-  to string
-Arguments: none
-Returns: a string representing all the values in the Linked List,
- formatted as:
-"{ a } -> { b } -> { c } -> NULL"
+  input:none
+  output:{ a } -> { b } -> { c } -> NULL
+  action:return formated string represent list value
 
   '''
    string = ""
    current=self.head
-  # WHILE Current is not NULL
    while current != None:
-  #   IF Current.Value is equal to value
        value = current.data
        if current.next is None:
           string +="{"+f' {value} '+"}" + " -> NULL"
@@ -64,8 +60,6 @@ Returns: a string representing all the values in the Linked List,
        else:
           string +="{"+f' {value} '+"} -> "
           current = current.next
-    #   Current <-- Current.Next
-  #     return TRUE
    return string
 
 
