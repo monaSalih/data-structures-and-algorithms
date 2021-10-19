@@ -21,3 +21,9 @@ Space time:O(1)
 [x]Where the linked list is of a size 1
 
 [x]“Happy Path” where k is not at the end, but somewhere in the middle of the linked list
+
+
+#Url link
+* [linked-list-kth.py-link](https://github.com/monaSalih/data-structures-and-algorithms/blob/linked-list-kth/python/code_challenges/linked_list/linked_list.py)
+
+* [branch-url](https://github.com/monaSalih/data-structures-and-algorithms/tree/linked-list-kth/python/code_challenges/linked_list)
