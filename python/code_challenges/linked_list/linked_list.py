@@ -103,44 +103,35 @@ class LinkedList:
                   break
           current=current.next
 # ================================================
-  def kth(self,k):  #=>[1] -> [3] -> [8] -> [2]=> 3-2
+  def kth(self,k):
         if k<0:
           return "Exception"
+        current=self.head
+        counter=0
+        while current:
 
-        current=self.head  #data=1  next=3
-        ##for loop
-        counter=0   #0
-        while current:   #1*   3(next 8)
-
-            if current.next == None:   #3*   #8
-                current=self.head #or line 121
+            if current.next == None:
+                current=self.head
                 break
             else:
-                counter +=1           #counter 1*  2
-                current =current.next       #3   8
+                counter +=1
+                current =current.next
         print(counter)
-        # counter-k=LinkedList Value
-        #break loop 2 coun3
-        #or current=self.head
-        value_postion=counter-k #3-0=3///
-        # current=1 counter=0
+        value_postion=counter-k
         if k>counter:
             return "Exception"
         counter=0
-        while current: # 1 3 8 2(6)
-             if current.next == None: #3   8  2 true
+        while current:
+             if current.next == None:
                pass
-             elif counter ==value_postion: #0 ==3 *  1==3*   2==3*
+             elif counter ==value_postion:
                  return current.data
              else:
-                counter +=1   #1 2  3
-                current=current.next #3  8  2
+                counter +=1
+                current=current.next
 # ================================================
 
 
-
-
-# ================================================
 if __name__=="__main__":
     test=LinkedList()
     test.append(1)

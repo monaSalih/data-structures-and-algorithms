@@ -145,3 +145,36 @@ def test_kth():
     expected=3
     actuall=ll.kth(2)
     assert expected==actuall
+
+def test_kth_greater():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected="Exception"
+    actuall=ll.kth(7)
+    assert expected==actuall
+
+def test_kth_less():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected="Exception"
+    actuall=ll.kth(-7)
+    assert expected==actuall
+
+def test_kth_happy_path():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected=3
+    actuall=ll.kth(2)
+    assert expected==actuall
