@@ -27,5 +27,8 @@ i used python poetry shell to navigat the test also use python note bad test to 
 [x]You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges
 
 ## Url Linkes
-[read_me]()
-[pull_request]()
+* [read_me]()
+
+* [pull_request](https://github.com/monaSalih/data-structures-and-algorithms/tree/linked-list-zip)
+
+* [linked_list_solve_zipped.py](https://github.com/monaSalih/data-structures-and-algorithms/blob/linked-list-zip/python/code_challenges/linked_list/linked_list.py)
