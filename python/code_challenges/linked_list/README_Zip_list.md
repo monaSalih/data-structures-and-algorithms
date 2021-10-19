@@ -13,4 +13,19 @@ space=>O(n)
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 
-i used python poetry shell to navigat the test also use python note bad test to test the real result 
+i used python poetry shell to navigat the test also use python note bad test to test the real result
+
+## feature test
+[x]Write a function called zip lists
+
+[x]Arguments: 2 linked lists
+
+[x]Return: Linked List, Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list.
+
+[x]Try and keep additional space down to O(1)
+
+[x]You have access to the Node class and all the properties on the Linked List class as well as the methods created in previous challenges
+
+## Url Linkes
+[read_me]()
+[pull_request]()
