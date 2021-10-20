@@ -93,7 +93,7 @@ efficiency o(n)
 space o(1)
 
 
-[click_here](https://github.com/monaSalih/data-structures-and-algorithms/pull/23)to go to the linked list pull request
+[click_here](https://github.com/monaSalih/data-structures-and-algorithms/pull/24)to go to the linked list pull request
 
 ## test feature
 [X]Can successfully add a node to the end of the linked list
