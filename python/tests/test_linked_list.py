@@ -1,4 +1,4 @@
-from code_challenges.linked_list.linked_list import (Node,LinkedList)
+from data_structure.linked_list.linked_list import (Node,LinkedList)
 import pytest
 
 
@@ -87,6 +87,17 @@ def test_includes():
     # Act
     expected=True
     actuall=ll.includes(1)
+    # Assert
+    assert actuall==expected
+
+def test_includes_not_exist():
+    # Arrange
+    ll=LinkedList()
+    ll.insert(1)
+    ll.insert(0)
+    # Act
+    expected=False
+    actuall=ll.includes(6)
     # Assert
     assert actuall==expected
 

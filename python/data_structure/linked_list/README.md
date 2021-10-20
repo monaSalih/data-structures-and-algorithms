@@ -55,5 +55,17 @@ output=>Returns: a string representing all the values in the Linked List, format
 [click_here](https://github.com/monaSalih/data-structures-and-algorithms/tree/linked-list/python/code_challenges/linked_list)to go to the linked list
 
 
+## Feature Testing
+[X]Can successfully instantiate an empty linked list
 
+[X]Can properly insert into the linked list
 
+[X]The head property will properly point to the first node in the linked list
+
+[X]Can properly insert multiple nodes into the linked list
+
+[X]Will return true when finding a value within the linked list that exists
+
+[X]Will return false when searching for a value in the linked list that does not exist
+
+[X]Can properly return a collection of all the values that exist in the linked list
