@@ -1,4 +1,4 @@
-from code_challenges.linked_list.linked_list import (Node,LinkedList)
+from data_structure.linked_list.linked_list import (Node,LinkedList)
 import pytest
 
 
@@ -101,3 +101,35 @@ def test_toString():
     actul=ll.toString()
 
     assert expected==actul
+
+
+def test_append():
+    ll=LinkedList()
+    ll.append(3)
+    ll.append(4)
+    #output
+    expected= "{ 3 } -> { 4 } -> NULL"
+    actull=ll.toString()
+    assert expected==actull
+
+
+def test_insert_before():
+  ll=LinkedList()
+  ll.append(3)
+  ll.append(4)
+  ll.insert_before(4,8)
+  #output
+  expected= "{ 3 } -> { 8 } -> { 4 } -> NULL"
+  actull=ll.toString()
+  assert expected==actull
+
+
+def test_insert_after():
+  ll=LinkedList()
+  ll.append(3)
+  ll.append(4)
+  #output
+  ll.insert_after(4,8)
+  expected= "{ 3 } -> { 4 } -> { 8 } -> NULL"
+  actull=ll.toString()
+  assert expected==actull
