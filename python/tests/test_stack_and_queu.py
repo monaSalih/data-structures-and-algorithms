@@ -5,67 +5,68 @@ import pytest
 # @pytest.mark.skip('todo')
 # def test_version():
 #     assert __version__ == '0.1.0'
+#pytest fixture
 #========================================================stack test
-# def test_push():
-#     push_node=Stack()
-#     push_node.push(2)
-#     excepted=push_node.size
-#     actuall=1
-#     assert excepted==actuall
+def test_push():
+    push_node=Stack()
+    push_node.push(2)
+    excepted=push_node.size
+    actuall=1
+    assert excepted==actuall
 
-# # # @pytest.mark.skip('todo')
-# def test_push_multiple_values():
-#     push_node=Stack()
-#     push_node.push(2)
-#     push_node.push(3)
-#     excepted=push_node.size
-#     actuall=2
-#     assert excepted==actuall
+# # @pytest.mark.skip('todo')
+def test_push_multiple_values():
+    push_node=Stack()
+    push_node.push(2)
+    push_node.push(3)
+    excepted=push_node.size
+    actuall=2
+    assert excepted==actuall
 
-# def test_pop_off_stack():
-#     push_node=Stack()
-#     push_node.push(2)
-#     push_node.push(3)
-#     push_node.pop()
-#     excepted=push_node.size
-#     actuall=1
-#     assert excepted==actuall
+def test_pop_off_stack():
+    push_node=Stack()
+    push_node.push(2)
+    push_node.push(3)
+    push_node.pop()
+    excepted=push_node.size
+    actuall=1
+    assert excepted==actuall
 
-# def test_pop_all_stack():
-#     push_node=Stack()
-#     push_node.push(2)
-#     push_node.push(3)
-#     push_node.pop()
-#     push_node.pop()
-#     excepted=push_node.is_empty()
-#     actuall=True
-#     assert excepted==actuall
+def test_pop_all_stack():
+    push_node=Stack()
+    push_node.push(2)
+    push_node.push(3)
+    push_node.pop()
+    push_node.pop()
+    excepted=push_node.is_empty()
+    actuall=True
+    assert excepted==actuall
 
-# def test_empty_stack():
-#     stack_empty=Stack()
-#     stack_empty.is_empty()
+def test_empty_stack():
+    stack_empty=Stack()
+    stack_empty.is_empty()
+
+def test_instantiate_empty_stack():
+    stack_empty=Stack()
+    stack_empty.is_empty()
 
 # def test_instantiate_empty_stack():
 #     stack_empty=Stack()
 #     stack_empty.is_empty()
 
-# # def test_instantiate_empty_stack():
-# #     stack_empty=Stack()
-# #     stack_empty.is_empty()
+def test_peek_next():
+    push_node=Stack()
+    push_node.push(2)
+    push_node.push(3)
+    excepted=push_node.peek_next()
+    actuall=2
+    assert excepted==actuall
 
-# def test_peek_next():
-#     push_node=Stack()
-#     push_node.push(2)
-#     push_node.push(3)
-#     excepted=push_node.peek_next()
-#     actuall=2
-#     assert excepted==actuall
-
-# def test_peek_empty_stack():
-#     stack_empty=Stack()
-#     with pytest.raises(Exception):
-#         stack_empty.peek()
-#         stack_empty.pop
+def test_peek_empty_stack():
+    stack_empty=Stack()
+    with pytest.raises(Exception):
+        stack_empty.peek()
+        stack_empty.pop
 
 #========================================================queue test
 
