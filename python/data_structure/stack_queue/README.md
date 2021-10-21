@@ -1,5 +1,5 @@
 ## Stacks and Queues
-
+[pull_request_link](https://github.com/monaSalih/data-structures-and-algorithms/pull/25)
 ## Stack
  Stack is said to be overflown if the space left in the memory heap is not enough to create a node.
 ![stack](https://static.javatpoint.com/ds/images/ds-linked-list-implementation-stack.png)
@@ -85,3 +85,31 @@ is empty | O(1)   space=O(1)
     * action:return boolean if the queue is empty
     <!-- * output:return boolean if the stack is empty -->
 
+### Test Feature:
+- [X] Can successfully push onto a stack
+
+- [X] Can successfully push multiple values onto a stack
+
+- [X] Can successfully pop off the stack
+
+- [X] Can successfully empty a stack after multiple pops
+
+- [X] Can successfully peek the next item on the stack
+
+- [X] Can successfully instantiate an empty stack
+
+- [X] Calling pop or peek on empty stack raises exception
+
+- [X] Can successfully enqueue into a queue
+
+- [X] Can successfully enqueue multiple values into a queue
+
+- [X] Can successfully dequeue out of a queue the expected value
+
+- [X] Can successfully peek into a queue, seeing the expected value
+
+- [X] Can successfully empty a queue after multiple dequeues
+
+- [X] Can successfully instantiate an empty queue
+
+- [X] Calling dequeue or peek on empty queue raises exception
