@@ -52,8 +52,58 @@ output=>Returns: a string representing all the values in the Linked List, format
 ```
 
 
-[click_here](https://github.com/monaSalih/data-structures-and-algorithms/tree/linked-list/python/code_challenges/linked_list)to go to the linked list
+[click_here](https://github.com/monaSalih/data-structures-and-algorithms/pull/23)to go to the linked list pull request
+
+## challange06
+## whiteBoard
+![whib](code.6.PNG)
+
+### Methods
+
+* append
+```
+arguments: new value
+this method do the following:
+>adds a new node with the given value to the end of the list
+>add multiple nodes to the end of a linked list
+```
+Approach & Efficiency
+efficiency o(n)
+space o(1)
+
+* insert before
+```
+arguments: value, new value
+this method do the following:
+> Before the middle list add new node
+> Before the the head
+```
+Approach & Efficiency
+efficiency o(n)
+space o(1)
+
+* insert after
+arguments: value, new value
+this method do the following:
+>adds a new node  after a node in the middle
+>insert a node after the last node of the linked list
+
+## Approach & Efficiency
+efficiency o(n)
+space o(1)
 
 
+[click_here](https://github.com/monaSalih/data-structures-and-algorithms/pull/24)to go to the linked list pull request
 
+## test feature
+[X]Can successfully add a node to the end of the linked list
 
+[X]Can successfully add multiple nodes to the end of a linked list
+
+[X]Can successfully insert a node before a node located i the middle of a linked list
+
+[X]Can successfully insert a node before the first node of a linked list
+
+[X]Can successfully insert after a node in the middle of the linked list
+
+[X]Can successfully insert a node after the last node of the linked list
