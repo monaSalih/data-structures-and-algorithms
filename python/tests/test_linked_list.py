@@ -148,19 +148,6 @@ def test_kth():
 
 
 
-def test_zlist():
-    list1=LinkedList()
-    list1.append(1)
-    list1.append(3)
-    list1.append(2)
 
-    list2=LinkedList()
-    list2.append(5)
-    list2.append(9)
-    list2.append(4)
-
-    expected="{ 1 } -> { 5 } -> { 3 } -> { 9 } -> { 2 } -> { 4 } -> NULL"
-    actuall=ziplist(list1,list2)
-    assert expected==actuall
 
 
