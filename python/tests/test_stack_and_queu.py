@@ -1,11 +1,9 @@
 from math import exp
-# from data_structure.stack_queue.stack_and_queu import __version__
+
+from data_structure.stack_queue.stack_queue_pseudo import (Pseudo_Queue,Stack)
 from data_structure.stack_queue.stack_and_queu import (Queue, Stack,Node)
 import pytest
-# @pytest.mark.skip('todo')
-# def test_version():
-#     assert __version__ == '0.1.0'
-#pytest fixture
+
 #========================================================stack test
 def test_push():
     push_node=Stack()
@@ -130,3 +128,29 @@ def test_peek_empty_stack():
     with pytest.raises(Exception):
         stack_empty.first()
         stack_empty.dequeu()
+#=========================================
+def test_pesudo_enqueue():
+    queu=Pseudo_Queue()
+    queu.enqueue(1)
+    actuall=1
+    excepted=queu.first_stack.top.value
+    assert actuall==excepted
+#=========================================
+def test_psudo_enqueue2():
+    queu=Pseudo_Queue()
+    queu.enqueue(1)
+    queu.enqueue(2)
+    #output
+    actul=2
+    expected=queu.first_stack.top.value
+    assert  actul==expected
+#=========================================
+# @pytest.mark.skip
+# def test_pesudo_denqueue():
+#     queu=Pseudo_Queue
+#     queu.enqueue("1")
+#     queu.dequeue()
+#     actul=1
+#     expected=queu.secound_stack.pop()
+
+#     assert  actul==expected

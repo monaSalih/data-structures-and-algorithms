@@ -6,11 +6,11 @@ class Node():
 class Stack():
     def __init__(self):
         self.top=None
+        self.size=0
 
     def push(self,value):
-        node=Node(value)
-        node.next=self.top
-        self.top=node
+       self.top=Node(value)
+       self.size +=1
 
     def pop(self):
         if self.is_empty():
@@ -25,21 +25,15 @@ class Stack():
             raise Exception("empty stack")
         return self.top.value
 
-    # def is_empty(self):
-    #  return not self.top
+    def is_empty(self):
+        return self.size==0
 
-    # def __len__(self):
-    #     counter=0
-    #     while self.top:
-    #         counter +=1
-    #         self.pop()
-    #     return counter
+
 
 
 
 class Pseudo_Queue:
-    # first_stack=Stack()
-    # secound_stack=Stack()
+
     def __init__(self):
         self.first_stack=Stack()
         self.secound_stack=Stack()
@@ -50,43 +44,23 @@ class Pseudo_Queue:
         return self.size==0
 
     def enqueue(self,value):
-        node=Node(value)
-        node.next=self.front
-        self.next=self.front
-        self.first_stack.push(node)
-        self.size +=1
-        # return self.rear
+        self.first_stack.push(value)
+        self.rear=self.first_stack.top.value
 
 
 
     def dequeue(self):
         if self.secound_stack.is_empty():
-            while not self.first_stack.is_empty():
+            while self.first_stack.top !=None:
                 self.secound_stack.push(self.first_stack.pop())
-        return self.secound_stack.pop().data
 
-
-
-
-
-    # def is_empty(self):
-    #  return not self.front
-
-    def __len__(self):
-        counter=0
-        while self.front:
-            counter +=1
-            self.dequeue()
-        return counter
+        return self.secound_stack.pop()
 
 if __name__=="__main__":
-    stack=Pseudo_Queue()
-    stack.enqueue("a")
-    stack.enqueue("c")
-    stack.enqueue("b")
-    stack.enqueue("d")
-    stack.enqueue("e")
-    print(stack.__len__())
-    # stack.dequeu()
-    # print(stack.__len__())
-    # print(stack.front())
+    test=Pseudo_Queue()
+    test.enqueue(3)
+    test.enqueue(4)
+    test.enqueue(6)
+    test.enqueue(7)
+    print(test.dequeue())
+
