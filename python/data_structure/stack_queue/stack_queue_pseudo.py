@@ -28,12 +28,12 @@ class Stack():
     # def is_empty(self):
     #  return not self.top
 
-    def __len__(self):
-        counter=0
-        while self.top:
-            counter +=1
-            self.pop()
-        return counter
+    # def __len__(self):
+    #     counter=0
+    #     while self.top:
+    #         counter +=1
+    #         self.pop()
+    #     return counter
 
 
 

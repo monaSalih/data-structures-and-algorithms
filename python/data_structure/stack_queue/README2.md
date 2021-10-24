@@ -3,9 +3,11 @@
 Use two stack to implement queue
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![whb](pesudo.PNG)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Efficiency=>O(n)
+Space Efficiency=>O(n)
 
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
