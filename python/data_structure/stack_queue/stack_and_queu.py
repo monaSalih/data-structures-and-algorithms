@@ -100,8 +100,8 @@ if __name__=="__main__":
     stack.enqueue("d")
     stack.enqueue("e")
     print(stack.__len__())
-    stack.dequeu()
-    print(stack.__len__())
+    # stack.dequeu()
+    # print(stack.__len__())
     print(stack.first())
 
 
