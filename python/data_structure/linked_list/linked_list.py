@@ -48,6 +48,7 @@ class LinkedList:
   input:none
   output:{ a } -> { b } -> { c } -> NULL
   action:return formated string represent list value
+
   '''
    string = ""
    current=self.head
@@ -61,3 +62,50 @@ class LinkedList:
           string +="{"+f' {value} '+"} -> "
           current = current.next
    return string
+
+
+  def append(self, value):
+     current = self.head
+     node=Node(value)
+     if current==None:
+       self.head = Node(value, self.head)
+
+     while current:
+      if current.next==None:
+          current.next=node
+          node.next=None
+          break
+      else:
+          current=current.next
+
+
+  def insert_before (self,value,new_data):
+      current=self.head
+      if self.head==None:
+          self.insert(new_data)
+      else:
+          while current:
+              if self.head.next.data==value:
+                  data_after=current.next
+                  current.next=Node(new_data)
+                  current.next.next=data_after
+                  break
+              current=current.next
+
+
+  def insert_after (self,value,new_data):
+      current=self.head
+      while current:
+          if current.data==value:
+                  next_data=current.next
+                  current.next=Node(new_data)
+                  Node(new_data).next=next_data
+                  break
+          current=current.next
+
+
+# if __name__=="__main__":
+#     test=LinkedList()
+#     test.insert_after()
+
+
