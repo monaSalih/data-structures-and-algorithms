@@ -25,8 +25,8 @@ class Stack():
             raise Exception("empty stack")
         return self.top.value
 
-    def is_empty(self):
-     return not self.top
+    # def is_empty(self):
+    #  return not self.top
 
     def __len__(self):
         counter=0
@@ -37,35 +37,40 @@ class Stack():
 
 
 
-
 class Pseudo_Queue:
     # first_stack=Stack()
     # secound_stack=Stack()
     def __init__(self):
-        self.front=None
-        self.rear=None
         self.first_stack=Stack()
         self.secound_stack=Stack()
+        self.front=self.first_stack.top
+        self.rear=self.secound_stack.top
 
+    def is_empty(self):
+        return self.size==0
 
     def enqueue(self,value):
-        self.first_stack.push(value)
-        self.rear=self.first_stack.top.value
+        node=Node(value)
+        node.next=self.front
+        self.next=self.front
+        self.first_stack.push(node)
+        self.size +=1
+        # return self.rear
+
 
 
     def dequeue(self):
-        if self.is_empty():
-            raise Exception("empty equeue")
-
-        self.secound_stack.push(self.first_stack.pop())
-        return self.secound_stack.pop()
-
+        if self.secound_stack.is_empty():
+            while not self.first_stack.is_empty():
+                self.secound_stack.push(self.first_stack.pop())
+        return self.secound_stack.pop().data
 
 
 
 
-    def is_empty(self):
-     return not self.front
+
+    # def is_empty(self):
+    #  return not self.front
 
     def __len__(self):
         counter=0
@@ -73,3 +78,15 @@ class Pseudo_Queue:
             counter +=1
             self.dequeue()
         return counter
+
+if __name__=="__main__":
+    stack=Pseudo_Queue()
+    stack.enqueue("a")
+    stack.enqueue("c")
+    stack.enqueue("b")
+    stack.enqueue("d")
+    stack.enqueue("e")
+    print(stack.__len__())
+    # stack.dequeu()
+    # print(stack.__len__())
+    # print(stack.front())
