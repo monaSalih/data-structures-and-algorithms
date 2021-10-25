@@ -1,7 +1,7 @@
 from data_structure.stack_queue.stack_queue_animal_shelter import (AnimalShelter,Node,Queue)
 
 
-def test_enqueue():
+def test_enqueu():
     actual = []
     animal = AnimalShelter()
     animal.enqueue('fifo', 'dog')
@@ -12,24 +12,26 @@ def test_enqueue():
     assert actual == excepted
 
 
-def test_enqueue_fail():
+def test_enqueu_fail():
     animal = AnimalShelter()
     actual = animal.enqueue('toto', 'elephant')
     excepted = 'This animal cant be in our shelter'
     assert actual == excepted
 
 
-def test_dequeue():
+def test_dequeu():
+    actual=[]
     animal = AnimalShelter()
     animal.enqueue('fifo', 'dog')
     animal.enqueue('lilo', 'cat')
-    actual = [animal.dequeue('dog'), animal.dequeue('cat')]
-    excepted = ['bull', 'soker']
+    actual +=[animal.dequeue('dog')]
+    actual +=[animal.dequeue('cat')]
+    excepted = ['fifo', 'lilo']
     assert actual == excepted
 
 
-def test_dequeue_fail():
+def test_dequeu_fail():
     animal = AnimalShelter()
-    actual = animal.dequeue('rabbit')
+    actual = animal.dequeue('humester')
     excepted = 'This animal not exist'
     assert actual == excepted
