@@ -1,4 +1,5 @@
-from code_challenges.linked_list.linked_list import (Node,LinkedList)
+from abc import ABC
+from data_structure.linked_list.linked_list import Node,LinkedList
 import pytest
 
 
@@ -91,13 +92,89 @@ def test_includes():
     assert actuall==expected
 
 
-def test_toString():
+def test__str__():
     ll=LinkedList()
     ll.insert(1)
     ll.insert(0)
 
      #output
     expected= "{ 0 } -> { 1 } -> NULL"
-    actul=ll.toString()
+    actul=ll.__str__()
 
     assert expected==actul
+
+
+def test_append():
+    ll=LinkedList()
+    ll.append(3)
+    ll.append(4)
+    #output
+    expected= "{ 3 } -> { 4 } -> NULL"
+    actull=ll.__str__()
+    assert expected==actull
+
+
+def test_insert_before():
+  ll=LinkedList()
+  ll.append(3)
+  ll.append(4)
+  ll.insert_before(4,8)
+  #output
+  expected= "{ 3 } -> { 8 } -> { 4 } -> NULL"
+  actull=ll.__str__()
+  assert expected==actull
+
+
+def test_insert_after():
+  ll=LinkedList()
+  ll.append(3)
+  ll.append(4)
+  #output
+  ll.insert_after(4,8)
+  expected= "{ 3 } -> { 4 } -> { 8 } -> NULL"
+  actull=ll.__str__()
+  assert expected==actull
+
+def test_kth():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected=3
+    actuall=ll.kth(2)
+    assert expected==actuall
+
+def test_kth_greater():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected="Exception"
+    actuall=ll.kth(7)
+    assert expected==actuall
+
+def test_kth_less():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected="Exception"
+    actuall=ll.kth(-7)
+    assert expected==actuall
+
+def test_kth_happy_path():
+    ll=LinkedList()
+    ll.append(1)
+    ll.append(3)
+    ll.append(8)
+    ll.append(2)
+
+    expected=3
+    actuall=ll.kth(2)
+    assert expected==actuall
