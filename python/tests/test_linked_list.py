@@ -1,5 +1,5 @@
 from abc import ABC
-from code_challenges.linked_list.linked_list import (Node,LinkedList)
+from data_structure.linked_list.linked_list import Node,LinkedList
 import pytest
 
 
