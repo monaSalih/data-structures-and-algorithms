@@ -6,63 +6,63 @@ class Node:
 class Queue:
     def __init__(self) :
         self.front=None
-        self.size=0
         self.rear=None
 
-    def __len__(self):
-        return self.size
-
-    def is_empty(self):
-        return self.size==0
-
     def enqueue (self,value):
-        new_node=Node(value,None)
-        if self.is_empty():
+        new_node=Node(value)
+        if not self.front:
             self.front=new_node
+            self.rear==new_node
         else:
-            self.rear.next=new_node
-        self.rear=new_node
-        self.size +=1
+            self.rear.value
+
 
     def dequeu(self):
-        if self.is_empty():
-            raise Exception("is Empty")
-        result=self.front.data
+        if self.front==None:
+            raise Exception ("this queue empty")
+        dequ_value=self.front
         self.front=self.front.next
-        self.size -=1
-        if self.is_empty():
-            self.tail=None
-        return result
+        return dequ_value
+
+    def isEmpty(self):
+        return self.front == None
 
     def peek(self):
-        if self.is_empty():
-            raise Exception("is Empty")
-        return self.front.data
+        if self.front == None:
+            return 'Empty Queue'
+        return self.front.value
+
+
+
+
 
 class AnimalShalter:
     def __init__(self):
         self.cat=Queue()
         self.dog=Queue()
+        # self.count=0
 
-    def enqueue(self,animal):
-      if animal=='cat' :
-        self.cat.enqueue(animal)
-
-      elif animal=='dog' :
-        self.dog.enqueue(animal)
-
+    def enqueue(self,animal,type):
+      if type=='cat' :
+        return self.cat.enqueue(animal)
+      elif type=='dog' :
+        return self.dog.enqueue(animal)
       else :
-        return 'This animal not exist'
+        return 'This animal cant be in our shelter'
 
-    def dequeue(self,animal):
-        if animal =='dog':
-            return self.cat.dequeue()
-        if animal =='cat':
-            return self.dog.dequeue()
+    def dequeue(self,pref):
+        if pref =='dog':
+            return self.cat.dequeu()
+        if pref =='cat':
+            return self.cat.dequeu()
         else:
             return 'This animal not exist'
 
-        
+    def is_empty(self):
+        if self.count > 0:
+            return False
+        else:
+            return True
 
 
 
@@ -76,6 +76,6 @@ if __name__=="__main__":
     catDog.enqueue('dog')
     catDog.enqueue('dog')
 
-    # print(catDog.dequeue('dodg'))
-    print(catDog.dequeue('dog'))
-    print(catDog.dequeue('dog'))
+    # print(catDog.dequeu('dodg'))
+    print(catDog.dequeu('dog'))
+    print(catDog.dequeu('dog'))
