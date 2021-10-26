@@ -13,4 +13,4 @@ space=O(n)
 
 use stack to store one of open brackets => "(,{,[" and push to the stack, and check if insert close bracket =>"),},]" store in variabul and check if the close brackets match with open bracket on the top stack if match balanced bracket then pop out the top element and return true else return false
 
-[pull]()
+[pull](https://github.com/monaSalih/data-structures-and-algorithms/pull/29) liked list 
