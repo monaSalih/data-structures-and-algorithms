@@ -32,7 +32,7 @@ def test_zlist2():
     actuall=ziplist(list1,list2)
     assert expected==actuall
 
-def test_zlist2():
+def test_zlist3():
     list1=LinkedList()
     list1.append(1)
     list1.append(3)
