@@ -4,7 +4,7 @@
 Tests for Binary Tree
 """
 
-from data_structure.trees.trees import (Node,BinaryTree)
+from data_structure.trees.trees import (Node,BinaryTree,Binary_search_tree)
 
 
 def test_bfs():
@@ -134,7 +134,37 @@ def test_in_order():
   assert actual == expected
   print("test_in_order_ passed")
 
+#================Binary Search Tree Test======================
+def test_add_method():
+    x = Binary_search_tree()
+    x.add(7)
+    x.add(8)
+    x.add(6)
+    x.add(5)
+    x.add(150)
+    x.add(19)
+    x.add(111)
+    x.add(115)
+    x.add(10000)
+    actual = x.in_order(x.root)
+    expected = [5, 6, 7, 8, 19, 111, 115, 150, 10000]
+    assert actual == expected
 
+
+def test_Contains_method():
+    x = Binary_search_tree()
+    x.add(7)
+    x.add(8)
+    x.add(6)
+    x.add(5)
+    x.add(150)
+    x.add(19)
+    x.add(111)
+    x.add(115)
+    x.add(10000)
+
+
+#=============================================
 test_bfs()
 test_bfs_2()
 test_pre_order()

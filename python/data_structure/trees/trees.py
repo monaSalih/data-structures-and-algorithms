@@ -114,6 +114,56 @@ class BinaryTree:
     return list_of_items
 
 
+#=================Binary Search Tree Implement=====================
 
+class Binary_search_tree(BinaryTree):
 
-  
+     def add(self, value):
+
+        if not self.root:
+            self.root = Node(value)
+            # print(self.root.value)
+            return
+
+        current = self.root
+
+        while current:
+            if value > current.value:
+                if current.right:
+                    current = current.right
+                else:
+                    current.right = Node(value)
+
+                    return
+
+            else:
+                if current.left:
+                    current = current.left
+                else:
+                    current.left = Node(value)
+                    return
+
+     def Contains(self, value):
+         if not self.root:
+             raise Exception("empty is tree")
+         elif value == self.root.value:
+             return True
+         else:
+             current = self.root
+             while current:
+                 if current.value < value:
+                     if current.right:
+                         current = current.right
+                         if value == current.value:
+                            return True
+                         else:
+                             return False
+
+                 else:
+
+                    if current.left:
+                        current = current.left
+                        if value == current.value:
+                            return True
+                    else:
+                        return False
