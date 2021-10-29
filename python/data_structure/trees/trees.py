@@ -29,13 +29,6 @@ class BinaryTree:
     self.root = None
 
   def bfs(self):
-    """
-    A binary tree method which returns a list of items that it contains
-
-    input: None
-
-    output: tree items
-    """
     # Queue breadth <-- new Queue()
     breadth = Queue()
     # breadth.enqueue(root)
@@ -117,22 +110,23 @@ class BinaryTree:
 #=================Binary Search Tree Implement=====================
 
 class Binary_search_tree(BinaryTree):
+    root = None
 
-     def add(self, value):
+    def add(self, data):
 
         if not self.root:
-            self.root = Node(value)
-            # print(self.root.value)
+            self.root = Node(data)
+            # print(self.root.data)
             return
 
         current = self.root
 
         while current:
-            if value > current.value:
+            if data > current.data:
                 if current.right:
                     current = current.right
                 else:
-                    current.right = Node(value)
+                    current.right = Node(data)
 
                     return
 
@@ -140,30 +134,29 @@ class Binary_search_tree(BinaryTree):
                 if current.left:
                     current = current.left
                 else:
-                    current.left = Node(value)
+                    current.left = Node(data)
                     return
 
-     def Contains(self, value):
-         if not self.root:
-             raise Exception("empty is tree")
-         elif value == self.root.value:
-             return True
-         else:
-             current = self.root
-             while current:
-                 if current.value < value:
-                     if current.right:
-                         current = current.right
-                         if value == current.value:
+    def Contains(self, data):
+        if not self.root:
+            raise Exception("empty is tree")
+        elif data == self.root.data:
+            return True
+        else:
+            current = self.root
+            while current:
+                if current.data < data:
+                    if current.right:
+                        current = current.right
+                        if data == current.data:
                             return True
-                         else:
-                             return False
+                        else:
+                            return False
 
-                 else:
-
+                else:
                     if current.left:
                         current = current.left
-                        if value == current.value:
-                            return True
+                    if data == current.data:
+                        return True
                     else:
                         return False

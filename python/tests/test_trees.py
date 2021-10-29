@@ -5,7 +5,7 @@ Tests for Binary Tree
 """
 
 from data_structure.trees.trees import (Node,BinaryTree,Binary_search_tree)
-
+import pytest
 
 def test_bfs():
   # Arrange
@@ -135,35 +135,32 @@ def test_in_order():
   print("test_in_order_ passed")
 
 #================Binary Search Tree Test======================
-def test_add_method():
-    x = Binary_search_tree()
-    x.add(7)
-    x.add(8)
-    x.add(6)
-    x.add(5)
-    x.add(150)
-    x.add(19)
-    x.add(111)
-    x.add(115)
-    x.add(10000)
-    actual = x.in_order(x.root)
-    expected = [5, 6, 7, 8, 19, 111, 115, 150, 10000]
+def test_add():
+     # Arrange
+    # Create tree instance
+    tree = Binary_search_tree()
+    # add "A" to the tree
+    tree.add('A')
+    # set expected list
+    expected = "A"
+    # set actual to the tree root value
+    actual = tree.root.data
+    # assert actual is same as expected
     assert actual == expected
 
-
-def test_Contains_method():
-    x = Binary_search_tree()
-    x.add(7)
-    x.add(8)
-    x.add(6)
-    x.add(5)
-    x.add(150)
-    x.add(19)
-    x.add(111)
-    x.add(115)
-    x.add(10000)
-
-
+# def test_add():
+#      # Arrange
+#     # Create tree instance
+#     tree = Binary_search_tree()
+#     # add "A" to the tree
+#     tree.add('A')
+#     tree.add('B')
+#     # set expected list
+#     expected = ["A","B"]
+#     # set actual to the tree root value
+#     actual = tree.root.data
+#     # assert actual is same as expected
+#     assert actual == expected
 #=============================================
 test_bfs()
 test_bfs_2()
