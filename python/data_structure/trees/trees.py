@@ -1,162 +1,132 @@
-"""
-This Module defines a Node and a Binary Tree
-"""
-
 class Node:
-  def __init__ (self,data,left=None,right=None):
-    self.data = data
-    self.left = left
-    self.right = right
+    def __init__(self,data,left=None,right=None):
+        self.data=data
+        self.left=left
+        self.right=right
 
 class Queue:
-  def __init__(self, collection=[]):
-    self.data = collection
+    def __init__(self,collection=[]) :
+        self.data=collection
+    def peek(self):
+        if len(self.data):
+            return True
+        return False
 
-  def peek(self):
-    if len(self.data):
-      return True
-    return False
+    def enqueue(self,value):
+        self.data.append(value)
 
-  def enqueue(self,item):
-    self.data.append(item)
-
-  def dequeue(self):
-    return self.data.pop(0)
+    def dequeue(self):
+        return self.data.pop(0)
 
 class BinaryTree:
+    def __init__(self):
+        self.root=None
 
-  def _init_(self):
-    self.root = None
+    def bfs(self):
+        breadth=Queue()
+        breadth.enqueue(self.root)
+        list_of_item=[]
 
-  def bfs(self):
-    # Queue breadth <-- new Queue()
-    breadth = Queue()
-    # breadth.enqueue(root)
-    breadth.enqueue(self.root)
+        while breadth.peek():
+            front=breadth.dequeue()
+            list_of_item += [front.data]
 
-    list_of_items = []
+            if front.left :
+                breadth.enqueue(front.left)
+            if front.right :
+                breadth.enqueue(front.right)
+        return list_of_item
 
-    while breadth.peek():
-      front = breadth.dequeue()
-      list_of_items += [front.data]
+    def pre_order(self):
+        list_of_item=[]
+        def walk(node):
+            if node:
+                list_of_item.append(node.data)
+                if node.left :
+                    walk(node.left)
+                if node.right :
+                    walk(node.right)
+        walk(self.root)
+        return list_of_item
 
-      if front.left:
-        breadth.enqueue(front.left)
+    def in_order(self):
+        list_of_item=[]
+        def walk(node):
+            if node:
+                if node.left :
+                    walk(node.left)
+                list_of_item.append(node.data)
+                if node.right :
+                    walk(node.right)
+        walk(self.root)
+        return list_of_item
 
-      if front.right:
-        breadth.enqueue(front.right)
+    def post_order(self):
+        list_of_item=[]
+        def walk(node):
+            if node:
+                if node.left :
+                    walk(node.left)
+                if node.right :
+                    walk(node.right)
+                list_of_item.append(node.data)
 
-    return list_of_items
-
-  def pre_order(self):
-    """
-    A binary tree method which returns a list of items that it contains
-
-    input: None
-
-    output: tree items
-
-    sub method : walk () to make the recursion staff
-    """
-    list_of_items = []
-    def walk(node):
-      if node:
-        list_of_items.append(node.data)
-        if node.left:
-          walk(node.left)
-        if node.right:
-          walk(node.right)
-
-    walk(self.root)
-    return list_of_items
-
-  def in_order(self):
-    """
-    function to in order the list using Trees
-    """
-    list_of_items = []
-    def walk(node):
-      if node:
-        if node.left:
-          walk(node.left)
-        list_of_items.append(node.data)
-        if node.right:
-          walk(node.right)
-
-    walk(self.root)
-    return list_of_items
-
-  def post_order(self):
-    """
-    A binary tree method which returns a list of items in post order
-
-    input: None
-
-    output: tree items
-    """
-    list_of_items = []
-    def walk(node):
-      if node:
-        if node.left:
-          walk(node.left)
-        if node.right:
-          walk(node.right)
-        list_of_items.append(node.data)
-
-    walk(self.root)
-    return list_of_items
-
-
-#=================Binary Search Tree Implement=====================
+        walk(self.root)
+        return list_of_item
 
 class Binary_search_tree(BinaryTree):
-    root = None
+    def __init__(self):
+        super().__init__()
 
-    def add(self, data):
+    def bfs(self):
+        breadth=Queue()
+        breadth.enqueue(self.root)
+        list_of_item=[]
 
+        while breadth.peek():
+            front=breadth.dequeue()
+            list_of_item += [front.data]
+
+            if front.left :
+                breadth.enqueue(front.left)
+            if front.right :
+                breadth.enqueue(front.right)
+        return list_of_item
+    def add(self,value):
         if not self.root:
-            self.root = Node(data)
-            # print(self.root.data)
-            return
+            self.root = Node(value)
 
-        current = self.root
-
-        while current:
-            if data > current.data:
-                if current.right:
-                    current = current.right
-                else:
-                    current.right = Node(data)
-
-                    return
-
-            else:
-                if current.left:
-                    current = current.left
-                else:
-                    current.left = Node(data)
-                    return
-
-    def Contains(self, data):
-        if not self.root:
-            raise Exception("empty is tree")
-        elif data == self.root.data:
-            return True
         else:
-            current = self.root
-            while current:
-                if current.data < data:
-                    if current.right:
-                        current = current.right
-                        if data == current.data:
-                            return True
-                        else:
-                            return False
-
+            temp=self.root
+            while temp:
+                if value < temp.data:
+                    if not temp.left:
+                        temp.left=Node(value)
+                        break
+                    temp=temp.left
                 else:
-                    if current.left:
-                        current = current.left
-                    if data == current.data:
-                        return True
-                    else:
+                    if not temp.right:
+                        temp.right=Node(value)
+                        break
+                    temp=temp.right
+    def contains(self,value):
+        if not self.root:
+            raise Exception("Empty Tree")
+        else:
+            temp=self.root
+            while temp:
+                if value == temp.data:
+                    return True
+                elif value < temp.data:
+                    if not temp.left:
                         return False
+                    temp=temp.left
+                else:
+                    if not temp.right:
+                        return False
+                    temp=temp.right
+
+
+
+
+
