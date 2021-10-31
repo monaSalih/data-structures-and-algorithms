@@ -35,10 +35,11 @@ Return maximum number in tree in this challange no argument but you have to retu
 
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![](tree-max.PNG)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
+Efficiency:O(n)
+space:O(1)
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 insert root value in temp parameters and check if tree is not empty and do recursion inside the function to check left side and right side
