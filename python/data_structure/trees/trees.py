@@ -73,6 +73,8 @@ class BinaryTree:
 
         walk(self.root)
         return list_of_item
+#=============================================
+   
 
 class Binary_search_tree(BinaryTree):
     def __init__(self):
@@ -129,4 +131,16 @@ class Binary_search_tree(BinaryTree):
 
 
 
+
+if __name__=="__main__":
+    tree = BinaryTree()
+    a_node = Node('1')
+    b_node = Node('2')
+    c_node = Node('3')
+    d_node = Node('4')
+    a_node.left = b_node
+    a_node.right = c_node
+    b_node.left = d_node
+    tree.root=a_node
+    print(tree.maximum())
 

@@ -124,6 +124,8 @@ def test_in_order():
   assert actual == expected
   print("test_in_order_ passed")
 
+
+
 # #================Binary Search Tree Test======================
 def test_add():
     """
@@ -175,6 +177,8 @@ def test_contains_exceptions():
     with pytest.raises(Exception):
         tree=Binary_search_tree()
         actull=tree.contains("O")
+
+
 
 #=============================================
 # test_bfs()
