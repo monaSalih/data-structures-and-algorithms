@@ -124,6 +124,7 @@ def test_in_order():
   assert actual == expected
   print("test_in_order_ passed")
 #================Max value test======================
+
 def test_max():
   tree = BinaryTree()
   a_node = Node(2)
@@ -143,6 +144,25 @@ def test_max():
   # assert actual is same as expected
   assert actual == expected
   print("test_post_order_ passed")
+# def test_max():
+#   tree = BinaryTree()
+#   a_node = Node(2)
+#   b_node = Node(3)
+#   d_node = Node(11)
+#   c_node = Node(9)
+
+
+#   tree.root=a_node
+#   tree.root.left=b_node
+#   tree.root.right=c_node
+#   tree.root.right.right=d_node
+
+#   expected = [11]
+#   # set actual to return value of post_order call
+#   actual = tree.maximum()
+#   # assert actual is same as expected
+#   assert actual == expected
+#   print("test_post_order_ passed")
 
 # #================Binary Search Tree Test======================
 def test_add():

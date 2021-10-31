@@ -75,19 +75,19 @@ class BinaryTree:
         return list_of_item
 #=============================================
     def maximum(self):
-        max_value=0
-        def walk(node):
-            if  self.root==None:
+        if  self.root==None:
                 return "empty tree"
-            else:
-                if node.data > max_value:
-                    max_value=node.data
-                if node.left :
-                    walk(node.left)
-                if node.right :
-                    walk(node.right)
-            walk(self.root)
+        max_value=self.root.data
+        def walk(root):
+            nonlocal max_value
+            if root.right :
+                walk(root.right)
+            if root.left :
+                walk(root.left)
+            if root.data > max_value :
+                    max_value=root.data
             return max_value
+        return [walk(self.root)]
 # current = self.root
 #         # dive to the rightmost leaf
 #         while current.right:
