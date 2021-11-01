@@ -21,6 +21,7 @@ class Queue:
 class BinaryTree:
     def __init__(self):
         self.root=None
+        
 
     def bfs(self):
         breadth=Queue()
