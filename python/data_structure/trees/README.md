@@ -26,3 +26,36 @@
 ## API
 <!-- Description of each method publicly available in each of your trees -->
 [pull_request_link](https://github.com/monaSalih/data-structures-and-algorithms/pull/30)
+_____________________________________________________________
+
+# Challenge Summary  ====>[max_tree_pull_request](https://github.com/monaSalih/data-structures-and-algorithms/pull/31)
+<!-- Description of the challenge -->
+### Maximume value in tree
+Return maximum number in tree in this challange no argument but you have to return max value
+
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![](tree-max.PNG)
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Efficiency:O(n)
+space:O(1)
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+insert root value in temp parameters and check if tree is not empty and do recursion inside the function to check left side and right side
+_____________________________________________________________
+
+# Challenge Summary  ====>[bfs_pull_request](https://github.com/monaSalih/data-structures-and-algorithms/pull/32)
+<!-- Description of the challenge -->
+### Breadth first search for tree
+Return list of value in the BFS tree
+## Whiteboard Process
+<!-- Embedded whiteboard image -->
+![](bfs_tree.PNG)
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+Efficiency:O(n)
+space:O(1)
+## Solution
+<!-- Show how to run your code, and examples of it in action -->
+insert tree node for bfs and return list of tree contant 

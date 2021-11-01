@@ -176,9 +176,34 @@ def test_contains_exceptions():
     with pytest.raises(Exception):
         tree=Binary_search_tree()
         actull=tree.contains("O")
-
-
-
+#=============================================
+#=================BFEs=========================
+def test_bfs():
+    tree = BinaryTree()
+    a_node = Node(2)
+    b_node = Node(7)
+    c_node = Node(5)#right root
+    d_node = Node(2)
+    e_node = Node(6)
+    f_node = Node(9)
+    g_node = Node(5)
+    h_node = Node(11)
+    i_node = Node(4)
+#==========node location============
+    a_node.left = b_node
+    a_node.right = c_node
+    b_node.left = d_node
+    b_node.right = e_node
+    e_node.left=g_node
+    e_node.right=h_node
+    c_node.right=f_node
+    f_node.left=i_node
+#==========node location End============
+    tree.root=a_node
+    expected = [2,7,5,2,6,9,5,11,4]
+    actual = tree.bfs()
+    assert actual == expected
+    print("test_bfs passed")
 #=============================================
 # test_bfs()
 # test_bfs_2()
