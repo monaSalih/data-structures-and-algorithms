@@ -1,5 +1,5 @@
 # import data_structure.trees.bfs_trees
-from data_structure.trees.bfs_trees import Queue
+from code_challenges.bfs_tree.bfs_trees import Queue
 from data_structure.trees.trees import (Node,BinaryTree)
 
 
