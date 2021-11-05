@@ -22,7 +22,7 @@ class BinaryTree:
     def __init__(self):
         self.root=None
 
-    
+
 
     def pre_order(self):
         list_of_item=[]
@@ -60,6 +60,21 @@ class BinaryTree:
 
         walk(self.root)
         return list_of_item
+#=============================================
+    def sumation(self):
+        if  self.root==None:
+                return "empty tree"
+        odd_node=0
+        def walk(root):
+            nonlocal odd_node
+            if root.right :
+                walk(root.right)
+            if root.left :
+                walk(root.left)
+            if root.data % 2 !=0 :
+                    odd_node = odd_node + root.data
+            return odd_node
+        return [walk(self.root)]
 #=============================================
 
 
@@ -121,12 +136,12 @@ class Binary_search_tree(BinaryTree):
 
 if __name__=="__main__":
     tree = BinaryTree()
-    a_node = Node('1')
-    b_node = Node('2')
-    c_node = Node('3')
-    d_node = Node('4')
+    a_node = Node(1)
+    b_node = Node(2)
+    c_node = Node(3)
+    d_node = Node(4)
     a_node.left = b_node
     a_node.right = c_node
     b_node.left = d_node
     tree.root=a_node
-    print(tree.maximum())
+    print(tree.sumation())
