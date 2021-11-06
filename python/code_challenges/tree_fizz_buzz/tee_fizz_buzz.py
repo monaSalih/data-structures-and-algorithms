@@ -17,7 +17,7 @@ class BinaryTree:
 
     def walk(self, node):
         self.list_of_item.append(node.data)
-
+#test new branch
         if node.left:
             self.walk(node.left)
         if node.middle:
