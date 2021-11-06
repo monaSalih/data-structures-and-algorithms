@@ -1,4 +1,4 @@
-from code_challenges.tree_fizz_buzz.tee_fizz_buzz import (Node,Binary_search_tree, fizzbuzz)
+from data_structure.tree_fizz_buzz.tee_fizz_buzz import (Node,Binary_search_tree, fizzbuzz)
 # fizzBuzz,fizzBuzzTree,BinaryTree,
 def test_fizzbuzztree():
     tree = Binary_search_tree()
