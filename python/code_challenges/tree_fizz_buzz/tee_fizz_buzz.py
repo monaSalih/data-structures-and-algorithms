@@ -1,90 +1,102 @@
-"""Node"""
 class Node:
     def __init__(self, data):
         self.data = data
-        self.left = None
-        self.middle = None
-        self.middle_left = None
-        self.middle_right= None
-        self.right = None
+        self.node_child = []
 
 
+class Queue:
+    def __init__(self, collection=[]):
+        self.data = collection
 
-class BinaryTree:
+    def peek(self):
+        if len(self.data):
+            return True
+        return False
+
+    def enqueue(self, item):
+        self.data.append(item)
+
+    def dequeue(self):
+        return self.data.pop(0)
+
+
+class Binary_search_tree:
     def __init__(self):
         self.root = None
-        self.list_of_item=[]
 
-    def walk(self, node):
-        self.list_of_item.append(node.data)
-#test new branch
-        if node.left:
-            self.walk(node.left)
-        if node.middle:
-            self.walk(node.middle)
-        if node.right:
-            self.walk(node.right)
+    def bfs(self):
+        """
+        binary tree method
+        input:none
+        output: binary tree
+        """
+        breadth = Queue()
+        breadth.enqueue(self.root)
 
-
-    def pre_order(self):
-        if self.root:
-            self.walk(self.root)
-        else:
-            return "Tree is empty."
-
-        return self.list_of_item
+        list_of_items = []
+        while breadth.peek():
+            front = breadth.dequeue()
+            list_of_items += [front.data]
+            if front.node_child:
+                for item in front.node_child:
+                    breadth.enqueue(item)
+        return list_of_items
 
 
-def fizzBuzz(value):
-    if value % 3 ==0 and value % 5 ==0 :
-        return "fizzBuzz"
-    if value % 3 ==0 :
-        return "fizz"
-    if value % 5 ==0 :
-        return "buzz"
-    else :
-        return value
+def fizzBuzz_checker(node):
+    """
+        check tree node can divide on 3 or 5 or both
+        input: node
+        output: fizz/buzz/fizzbuzz
+    """
+    if not node.data % 5 and not node.data % 3:
+        return "FizzBuzz"
+    elif not node.data % 3:
+        return "Fizz"
+    elif not node.data % 5:
+        return "Buzz"
+    else:
+        return str(node.data)
 
 
+def fizzbuzz(tree):
+
+    """
+    binary tree convert to k-tree
+    input: ktree
+    output:fizzBuzz ktree
+    """
+    breadth = Queue()
+    breadth.enqueue(tree.root)
+    while breadth.peek():
+        current = breadth.dequeue()
+        current.data = fizzBuzz_checker(current)
+        if current.node_child:
+            for item in current.node_child:
+                breadth.enqueue(item)
+
+    tree2 = Binary_search_tree()
+    tree2=tree
+
+    return tree2
 
 
-def fizzBuzzTree(tree):
-
-    # k-tree 4tree
-    game_bt = BinaryTree()
-
-    if tree.root == None:
-        return game_bt
-
-    def _walk(node):
-        new_node = Node(fizzBuzz(node.data))
-        if node.left:
-            new_node.left = _walk(node.left)
-        if node.middle:
-            new_node.middle = _walk(node.middle)
-        if node.right:
-            new_node.right = _walk(node.right)
-        return new_node
-
-    game_bt.root = _walk(tree.root)
-
-    return (game_bt)
+tree = Binary_search_tree()
+a_node = Node(3)
+b_node = Node(5)
+c_node = Node(4)
+d_node = Node(9)
+e_node = Node(2)
+f_node = Node(15)
 
 
-if __name__ == "__main__":
-    tree_fizz = BinaryTree()
-    tree_fizz.root = Node(2)
-    root_game = tree_fizz.root
-    root_game.right = Node(5)
-    root_game.middle = Node(21)
-    root_game.left = Node(3)
+a_node.node_child.append(b_node)
+a_node.node_child.append(d_node)
+b_node.node_child.append(c_node)
+c_node.node_child.append(e_node)
+a_node.node_child.append(f_node)
 
-    root_game.right.left = Node(15)
-    root_game.left.left = Node(10)
+tree.root = a_node
 
-    root_game.middle.left = Node(21)
-    root_game.middle.right = Node(5)
 
-    root_game.right.right = Node(3)
-    fizzBuzzTree = fizzBuzzTree(tree_fizz)
-    print (fizzBuzzTree.pre_order())
+print(fizzbuzz(tree).bfs())

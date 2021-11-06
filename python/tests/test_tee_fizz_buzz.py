@@ -1,17 +1,23 @@
-from code_challenges.tree_fizz_buzz.tee_fizz_buzz import (Node,BinaryTree,fizzBuzz,fizzBuzzTree)
-
+from code_challenges.tree_fizz_buzz.tee_fizz_buzz import (Node,Binary_search_tree, fizzbuzz)
+# fizzBuzz,fizzBuzzTree,BinaryTree,
 def test_fizzbuzztree():
-    tree_fizz = BinaryTree()
-    tree_fizz.root = Node(2)
-    root_game = tree_fizz.root
-    root_game.right = Node(5)
-    root_game.left = Node(3)
-    root_game.right.left = Node(15)
-    root_game.left.left = Node(10)
-    root_game.right.right = Node(3)
-    fizz_buzz_tree = fizzBuzzTree(tree_fizz)
-    actual = fizz_buzz_tree.pre_order()
-    excepted = [2, 'Fizz', 'Buzz', 'Buzz', 'FizzBuzz', 'Fizz']
-    assert actual == excepted
+    tree = Binary_search_tree()
+    a_node = Node(3)
+    b_node = Node(5)
+    c_node = Node(4)
+    d_node = Node(9)
+    e_node = Node(2)
+    f_node = Node(15)
 
+    a_node.node_child.append(b_node)
+    a_node.node_child.append(d_node)
+    b_node.node_child.append(c_node)
+    c_node.node_child.append(e_node)
+    a_node.node_child.append(f_node)
+    tree.root = a_node
+
+    expected = ['Fizz', 'Buzz', 'Fizz', 'FizzBuzz', '4', '2']
+    actual = fizzbuzz(tree).bfs()
+    assert actual == expected
+    print("test_bfs passed")
 
