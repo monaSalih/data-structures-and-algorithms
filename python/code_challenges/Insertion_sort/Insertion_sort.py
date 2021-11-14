@@ -15,6 +15,7 @@ if __name__ == "__main__":
     Reverse_sorted = [20,18,12,8,5,-2]
     Few_uniques = [5,12,7,5,5,7]
     Nearly_sorted = [2,3,5,7,13,11]
+    print(insertion_sort(input_array))
     print(insertion_sort(Reverse_sorted))
     print(insertion_sort(Few_uniques))
     print(insertion_sort(Nearly_sorted))
