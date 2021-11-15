@@ -6,7 +6,8 @@ sort array using mearge sort, where take unsorted array and return it sorted usi
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-
+Efficiency:O(n)
+space:O(n)
 ## Solution
 <!-- Show how to run your code, and examples of it in action -->
 
@@ -51,4 +52,4 @@ def merge (left,right,arr):
 ```
 
 
-[pull_request]()
+[pull_request](https://github.com/monaSalih/data-structures-and-algorithms/pull/36)
