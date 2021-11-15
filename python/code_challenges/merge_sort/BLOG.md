@@ -42,19 +42,4 @@ ALGORITHM Merge(left, right, arr)
 ----
 ## Trace
 This algorithme is divide and sort unsorted array
-```
-        [ 20 ,18  ,12  ,8  ,5  ,-2]
-
-[20, 18, 12]                    [8,  5,  -2]
-
-[18, 20]   [12]                  [8,5] [-2]
-
-[18, 20] [12]                   [5, 8] [-2]
-
-[18,20, 12]                        [5,8,-2]
-
-[12,18, 20]                       [-2,8,5]
-
-
-           [-2, 8, 5, 12,18,20]
-```
+![](meBlog.PNG)

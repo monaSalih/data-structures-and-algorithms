@@ -3,7 +3,7 @@
 sort array using mearge sort, where take unsorted array and return it sorted using merge sorted
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![](mergeSort.PNG)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Efficiency:O(n)
