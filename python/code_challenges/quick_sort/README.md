@@ -3,7 +3,7 @@
 write function take function to sort unsort array using quick sort
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![](quick_sort.PNG)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 Efficiency:O(n)
@@ -35,4 +35,4 @@ def swap(arr,i,low):
     arr[i] = arr[low]
     arr[low] = temp
 ```
-[pull_request]()
+[pull_request](https://github.com/monaSalih/data-structures-and-algorithms/pull/37)
