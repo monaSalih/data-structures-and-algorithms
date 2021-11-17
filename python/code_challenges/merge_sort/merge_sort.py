@@ -1,10 +1,16 @@
 def merge_sort(arr):
+    """
+    find array length
+    find mid,left,right in the array and set them in varuble
+    sort left and right side
+    merage together sorted left and right side
+    """
     n = len (arr)
 
     if n > 1:
         mid = n//2
         left = arr [0:mid]
-        right = arr [mid:]
+        right = arr [mid:n]
 
         merge_sort(left)
         merge_sort(right)
@@ -13,6 +19,11 @@ def merge_sort(arr):
     return arr
 
 def merge (left,right,arr):
+    """
+    in this function reseve 3 argument(left,right,arr)
+    check if left value less than right value save them in array
+    else sit right value in array
+    """
     i = 0
     j = 0
     k = 0
@@ -22,7 +33,7 @@ def merge (left,right,arr):
             arr[k] = left[i]
             i = i+1
         else:
-            arr[k] = right[i]
+            arr[k] = right[j]
             j = j+1
         k = k+1
 

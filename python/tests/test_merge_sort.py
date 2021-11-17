@@ -3,13 +3,13 @@ from code_challenges.merge_sort.merge_sort import *
 def test_sort_merge():
     arr = [8,4,23,42,16,15]
     actual = merge_sort(arr)
-    excepted = [4, 8, 42, 42, 23, 42]
+    excepted = [4, 8, 15, 16, 23, 42]
     assert actual == excepted
 
 def test_sort_merge2():
     arr = [20,18,12,8,5,-2]
     actual = merge_sort(arr)
-    excepted = [-2, -2, -2, 12, 12, 20]
+    excepted = [-2, 5, 8, 12, 18, 20]
     assert actual == excepted
 
 def test_sort_merge3():
