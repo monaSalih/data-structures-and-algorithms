@@ -1,4 +1,10 @@
 def quick_sort(arr,left,right):
+    """
+    check if left < right
+    call partition
+    recall quick_sort with (arr, left, position-1)
+    recall quick_sort with (arr, position+1, right)
+    """
     if left < right:
         position = partition(arr, left, right)
         quick_sort (arr, left, position-1)
@@ -7,6 +13,11 @@ def quick_sort(arr,left,right):
 
 
 def partition(arr, left ,right):
+    """
+    set pivot right value in array
+    loop where i > left and less than right
+    if value less than pivot call swap function
+    """
     pivot = arr[right]
     low = left-1
     for i in range(left,right):
@@ -18,6 +29,9 @@ def partition(arr, left ,right):
     return low+1
 
 def swap(arr,i,low):
+    """
+    to swap between value in the array
+    """
     temp = arr[i]
     arr[i] = arr[low]
     arr[low] = temp
