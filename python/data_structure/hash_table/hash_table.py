@@ -25,6 +25,21 @@ class LinkedList:
         """
         self.head = Node(value, self.head)
 
+    def includes(self, value):
+        """
+        input: 1 value
+        output:true
+        action:to check if the value exist in the
+        """
+        current = self.head
+        while current != None:
+            if current.value == value:
+                return True
+            else:
+                current = current.next
+        return False
+
+
 
 class HashTable:
     def __init__(self, size=1024):
@@ -81,7 +96,35 @@ class HashTable:
       # return None
       return None
 
+    def contains(self,key):
+        """
+        check if the key exist in the tan=ble or not
+        arg:key
+        return:Boolean
+        """
+        idx=self.__hash(key)
+        if self.__buckets[idx]:
+            return self.__buckets[idx].includes(key)
+        else:
+            return False
+
+if __name__=='__main__':
+    hash = HashTable()
+    # print(hash._HashTable__hash('mona'))
+    hash.add('mona',"salih")
+    print(hash._HashTable__hash('mona'))
+    #=============================
+    hash.add('salih',"mona")
+    print(hash._HashTable__hash('salih'))
+    #====================
+    # hash.add('cd',"mona")
+    # print(hash.get('cd'))
+    # print(hash.contains('Alobisat'))
+    #=====================
+    hash.add('mona',"Alobisat")
+    hash.add('mona',"salih")
+    print(hash.get('mona'))
 
 
 
-        
+
