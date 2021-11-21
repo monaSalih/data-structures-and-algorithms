@@ -111,25 +111,21 @@ class HashTable:
             return False
 
 
-def repeated_word(word):
+import re
+def repeted_word(string):
     """
     function to return repeted word in sentense
     Arguments: string
     Return: string
     """
-    ht = HashTable()
-    if word is None:
-        return None
-    word = re.sub('\W+', ' ', word).lower().split()
-    for i in word:
-        if ht.contains(i):
-            return i
-        else:
-            ht.add(i, "")
+    words = re.findall(r'\w+', string)
+    for word in words:
+        if words.count(word) > 1:
+            return word
 
-
-if __name__ == '__main__':
-    print(repeated_word("Once upon a time, there was a brave princess who..."))
+if __name__=='__main__':
+    s = "It was a queer, sultry summer, the summer they electrocuted the Rosenbergs, and I didn’t know what I was doing in New York.."
+    print(repeted_word(s))
 
     # hash = HashTable()
     # # print(hash._HashTable__hash('mona'))
