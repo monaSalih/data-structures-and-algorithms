@@ -1,6 +1,8 @@
 # Hashtables
 <!-- Short summary or background information -->
 A hash table is a data structure that is used to store keys/value pairs.
+
+![](repeat_word.PNG)
 ## Challenge
 <!-- Description of the challenge -->
 implement following methode (add,contains,get,hash) in hash table class
