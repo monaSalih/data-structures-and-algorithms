@@ -1,7 +1,7 @@
 # Challenge Summary
 <!-- Description of the challenge -->
 write function that take two binary trees as parameters.
-Using your Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
+Using Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
 
@@ -40,7 +40,7 @@ def tree_intersection(tree1, tree2):
 
 ```
 
-🌹Solve the lab with these girl:
+Solve the lab with these girl:
 - Dua AL-jaradat
 - Tasnem alabsi
 - Tahany Ali
