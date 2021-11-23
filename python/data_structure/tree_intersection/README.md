@@ -4,7 +4,7 @@ write function that take two binary trees as parameters.
 Using Hashmap implementation as a part of your algorithm, return a set of values found in both trees.
 ## Whiteboard Process
 <!-- Embedded whiteboard image -->
-
+![](t3.PNG)
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
 time O(logn)
