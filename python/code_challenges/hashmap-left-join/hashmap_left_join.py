@@ -56,10 +56,22 @@ class HashTable:
         else:
             return False
 
-def hash_left_join(hash_left,hash_right):
+def hash_left_join(hash_one,hash_two):
     arr = []
-    for hash in hash_left.__buckets:
+    for hash in hash_one.__buckets:
         if hash != None:
             current = hash.head
             while current.head:
-                arr += [[current.vlaue]]
+                arr += [[current.vlaue[0],current.value[1]]]
+                current = current.next
+
+    for elem in arr:
+        if hash_two.contains(elem[0]):
+            res=hash_two.get(elem[0])
+            arr += [res]
+        else:
+            arr += [None]
+    return arr
+
+
+
