@@ -52,6 +52,10 @@ class Stack:
 		"""
     self.dq.pop()
 
+  def __len__(self):
+    return len(self.dq)
+
+
 class Edge:
   """
     a class for Adding a new edge between two nodes in the graph
@@ -124,9 +128,51 @@ class Graph:
       for edge in neighbors:
         neighbor =  edge.vertex
 
-        if neighbour not in visited:
-          visited.add(neighbor)
-          queue.enqueue(neighbour)
+        if neighbors not in visited:
+            visited.add(neighbor)
+            queue.enqueue(neighbors)
+
+  def depth_first(self, start_vertex):
+    vertex = []
+    visited = []
+    stack = Stack()
+
+    if start_vertex not in self.__adjacency_list:
+        raise KeyError(' not exist in graph')
+
+    visited.append(start_vertex)
+    stack.push(start_vertex)
+
+    while len(stack):
+        vertex_stack = stack.pop()
+        vertex.append(vertex_stack)
+        vertex_neighbors = self.get_neighbors(vertex_stack)
+
+    for neighbor in vertex_neighbors:
+        if neighbor.weight not in visited :
+            visited.append(neighbor.weight)
+            stack.push(neighbor.weight)
+    return str(vertex_stack[0])
+
+if __name__ == '__main__':
+    graph = Graph()
+    node_a = graph.add_node('a')
+    node_b = graph.add_node('b')
+    node_c = graph.add_node('c')
+    node_d = graph.add_node('d')
+
+    graph.add_edge(node_a,node_c,5)
+    graph.add_edge(node_a,node_c,5)
+    graph.add_edge(node_b,node_c,1)
+
+    graph.get_nodes()
+
+    # graph.get_neighbors(node_a) [0].weight
+    # graph.get_neighbors (node_b)[0].weight
+    # graph.get_neighbors (node_c)[0].weight
+    # graph.get_neighbors (node_d)[0].weight
+
+    print(graph.depth_first(node_a))
 
 
 
