@@ -159,7 +159,15 @@ class Graph:
         return str(vertex_stack[0])
 
     def graph_business_trip(self,c_name):
-         pass
+         trip_cost = 0
+         for name in c_name:
+             for i in self.get_neighbors:
+                 if name == i.value:
+                     trip_cost +=name.weight
+                 else:
+                     return "there is no way"
+
+
 
 
 if __name__ == '__main__':
