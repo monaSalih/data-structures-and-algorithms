@@ -1,29 +1,30 @@
-# Graphs
+# Depth First Traversal
 <!-- Short summary or background information -->
-write function called graph_business_trip,take graph node and city name and return the cost of this trip or null if there is no way
+implement a breadth-first traversal on graph
 ## Challenge
 <!-- Description of the challenge -->
-* graph_business_trip
-Arguments: graph node and city name
-Returns:  the cost of this trip or null if there is no way
-
-![](graph.PNG)
-
-
+write function name Depth first take an node as argumment,and return collection of nodes in pre-order depth-first traversal order
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
-time:O(n)
-space:O(n)
+time:
+space:
+![](graph.PNG)
+## Solution
+<!-- Embedded whiteboard image -->
+```
+def graph_depth_first(self,vertex):
+         depth=[]
+         depth_list=[]
+         depth_list.append(vertex)
+         while (len(depth_list)):
+             edges=self.get_neighbors(vertex)
+             if len(edges):
+                 for i in edges:
+                     if not i.vertex in depth_list:
+                         depth_list.append(i.vertex)
+         return depth
+```
 
-## API
-<!-- Description of each method publicly available in your Graph -->
-```
-def graph_business_trip(self,c_name):
-         trip_cost = 0
-         for name in c_name:
-             for i in self.get_neighbors:
-                 if name == i.value:
-                     trip_cost +=name.weight
-                 else:
-                     return "there is no way"
-```
+
+![pull_request](https://github.com/monaSalih/data-structures-and-algorithms/pull/45)
+

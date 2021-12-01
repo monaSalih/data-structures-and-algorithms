@@ -158,14 +158,21 @@ class Graph:
                 stack.push(neighbor.weight)
         return str(vertex_stack[0])
 
-    def graph_business_trip(self,c_name):
-         trip_cost = 0
-         for name in c_name:
-             for i in self.get_neighbors:
-                 if name == i.value:
-                     trip_cost +=name.weight
-                 else:
-                     return "there is no way"
+    def graph_depth_first(self,vertex):
+         depth=[]
+         depth_list=[]
+         depth_list.append(vertex)
+         while (len(depth_list)):
+             edges=self.get_neighbors(vertex)
+             if len(edges):
+                 for i in edges:
+                     if not i.vertex in depth_list:
+                         depth_list.append(i.vertex)
+         return depth
+
+
+
+
 
 
 
